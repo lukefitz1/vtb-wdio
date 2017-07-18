@@ -1,6 +1,9 @@
 describe("Open account login page", function () {
     it("should login to VTB customer account successfully", function () {
-        browser.url("/customer/account/login");
+        //staging
+        //browser.url(baseUrlSecure + "/customer/account/login");
+        //prod
+        browser.url(baseUrl + "/customer/account/login");
 
         //wait for login form is visible
         account.loginForm.waitForVisible();
@@ -17,6 +20,9 @@ describe("Open account login page", function () {
     });
 
     it("should login to PJJ customer account successfully", function () {
+        // staging
+        //browser.url(pjjUrlSecure + "/customer/account/login");
+        //prod
         browser.url(pjjUrl + "/customer/account/login");
 
         //wait for login form is visible
@@ -33,7 +39,10 @@ describe("Open account login page", function () {
         expect(account.dashboard.isVisible()).to.be.true;
     });
 
-    it.only("should login to PJG customer account successfully", function () {
+    it("should login to PJG customer account successfully", function () {
+        //stage
+        //browser.url(pjgUrlSecure + "/customer/account/login");
+        //prod
         browser.url(pjgUrl + "/customer/account/login");
 
         //wait for login form is visible
